@@ -24,7 +24,7 @@ public class LoadUser{
 				   System.out.println(oldId);
 				   name=rs.getString(2);
 				   service=new UserService();
-				   newId=service.save(name, "111111","",dateline);
+				   newId=service.save(name, "3453453","",dateline);
 				   user=new User(oldId,name,newId);
 				   os.writeObject(user);
 			   }
