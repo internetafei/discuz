@@ -69,12 +69,10 @@ public class UserService {
 	}
 	
 	private void insert_PRE_COMMON_MEMBER_COUNT(Long uid,Long dateline) throws Exception{
-		String sql="REPLACE INTO pre_common_member_status SET uid=?, regip='127.0.0.1' , `lastip`='127.0.0.1' ,lastvisit=?,lastactivity=?,lastpost=0,lastsendmail=0";
+		String sql="REPLACE INTO pre_common_member_count SET uid=?";
 		ps=conn.prepareStatement(sql);
 		int index=1;
 		ps.setLong(index++, uid);
-		ps.setLong(index++, dateline);
-		ps.setLong(index++, dateline);
 		ps.executeUpdate();
 	}
 	private void insert_PRE_COMMON_MEMBER_PROFILE(Long uid) throws Exception{
@@ -140,7 +138,6 @@ public class UserService {
 	        e.printStackTrace();  
 	        return null;  
 	    }  
-	      
 	}  
 	public static String randstr(int len ){
 		char res[]=new char[len];
@@ -152,5 +149,4 @@ public class UserService {
 		}
 		return new String(res);
 	}
-	
 }
